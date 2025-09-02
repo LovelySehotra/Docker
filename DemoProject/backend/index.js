@@ -9,9 +9,10 @@ app.use(express.urlencoded({ extended: true })); // for parsing application/x-ww
 
 
 // MongoDB connection
-mongoose.connect('mongodb+srv://lsehotra12:Ntzm5N2v6tpErANd@cluster0.xubsbuh.mongodb.net/barsandbios', {
-}).then(() => console.log('MongoDB connected'))
-  .catch(err => console.log('MongoDB connection error:', err));
+mongoose.connect('mongodb://admin:password@localhost:27017/user?authSource=admin')
+  .then(() => console.log('MongoDB connected'))
+  .catch(err => console.error('MongoDB connection error:', err));
+
 
 // User schema and model
 const userSchema = new mongoose.Schema({
